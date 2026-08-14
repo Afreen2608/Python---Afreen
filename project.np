@@ -1,0 +1,43 @@
+import numpy as np
+
+# Student names
+students = np.array(["Amit", "Riya", "Rahul", "Sneha", "Vikas"])
+
+# Marks in 3 subjects: Math, Science, English
+marks = np.array([
+    [85, 78, 92],
+    [72, 88, 80],
+    [90, 95, 89],
+    [65, 70, 75],
+    [80, 85, 78]
+])
+
+# Calculate total marks
+total = np.sum(marks, axis=1)
+
+# Calculate average marks
+average = np.mean(marks, axis=1)
+
+# Find highest and lowest marks
+highest = np.max(marks, axis=1)
+lowest = np.min(marks, axis=1)
+
+# Display results
+print("STUDENT MARKS ANALYZER")
+print("-" * 40)
+
+for i in range(len(students)):
+    print(f"Student: {students[i]}")
+    print(f"Total: {total[i]}")
+    print(f"Average: {average[i]:.2f}")
+    print(f"Highest Mark: {highest[i]}")
+    print(f"Lowest Mark: {lowest[i]}")
+    print("-" * 40)
+
+# Find class average
+class_average = np.mean(average)
+print(f"Class Average: {class_average:.2f}")
+
+# Find student with highest total
+top_student = students[np.argmax(total)]
+print(f"Top Student: {top_student}")
